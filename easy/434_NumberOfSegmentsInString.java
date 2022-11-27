@@ -1,6 +1,5 @@
 class Solution {
     public int countSegments(String s) {
-        s=s.trim();
         if(s.length()==0)
         {
             return 0;
@@ -8,11 +7,11 @@ class Solution {
         int c=0;
         for(int i=0;i<s.length();i++)
         {
-            if(s.charAt(i)==' ')
+            if((i==0 || s.charAt(i-1)==' ') && s.charAt(i)!=' ')
             {
                 c++;
             }
         }
-        return c+1;
+        return c;
     }
 }
